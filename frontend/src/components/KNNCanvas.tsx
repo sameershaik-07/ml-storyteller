@@ -80,7 +80,7 @@ export default function KNNCanvas({ points, target, maxDistance, phase, animate 
             fill={targetColor}
             shape={target.class_id === -1 ? "star" : "circle"}
             r={150} // Make the target very large for visibility
-            isAnimationActive={Math.max(animate ? 1 : 0)}
+            isAnimationActive={animate}
             animationDuration={800}
           />
           
