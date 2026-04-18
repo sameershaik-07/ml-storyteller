@@ -2,7 +2,21 @@
 import React from "react";
 import { ComposedChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts";
 
-export default function LogRegCanvas({ points, w1, w2, b, animate = true }) {
+interface Point {
+  x: number;
+  y: number;
+  class_id?: number;
+}
+
+interface LogRegCanvasProps {
+  points: Point[];
+  w1: number;
+  w2: number;
+  b: number;
+  animate?: boolean;
+}
+
+export default function LogRegCanvas({ points, w1, w2, b, animate = true }: LogRegCanvasProps) {
   const class0 = points.filter((p: any) => p.class_id === 0);
   const class1 = points.filter((p: any) => p.class_id === 1);
   
